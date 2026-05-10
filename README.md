@@ -29,22 +29,20 @@ pip install img2pdf
 
 ## Usage
 
-1. **Edit the script** to specify your source folder:
-   - Open `unione_jpg_to_pdf.py`
-   - Modify the `cartella` variable to point to your folder containing JPEG images:
-   
-   ```python
-   cartella = Path(r"C:\path\to\your\folder")
+2. **Run the script** with the folder path as an argument:
+   ```bash
+   python unione_jpg_to_pdf.py "C:\path\to\your\folder"
    ```
 
-2. **Run the script**:
+   If you omit the folder argument, the script uses the current working directory:
    ```bash
    python unione_jpg_to_pdf.py
    ```
 
 3. **Check the output**:
    - The script will display all found JPEG files
-   - A `output.pdf` file will be created in the same folder as your source images
+   - If `output.pdf` does not exist, it will be created in the same folder as your source images
+   - If `output.pdf` already exists, the script will rotate the existing PDF by 90 degrees
 
 ## Example
 
@@ -69,7 +67,7 @@ my_images/
 
 ## Error Handling
 
-If no JPEG files are found in the specified folder, the script will raise an exception with the message: `"Nessun file JPG/JPEG trovato"` (No JPG/JPEG files found).
+If no JPEG files are found in the specified folder, the script will raise an exception with the message: `"No JPG/JPEG files found"`.
 
 ## Notes
 
